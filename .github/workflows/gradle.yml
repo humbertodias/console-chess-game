@@ -31,5 +31,5 @@ jobs:
         arguments: build
     - uses: actions/upload-artifact@v2
       with:
-        name: my-artifact
-        path: build/libs/console-chess-game-*.jar
+        name: Package
+        path: build/libs
