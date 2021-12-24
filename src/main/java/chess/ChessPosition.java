@@ -1,6 +1,6 @@
 package chess;
 
-import boardgame.Position;
+import board.Position;
 
 public class ChessPosition {
 
