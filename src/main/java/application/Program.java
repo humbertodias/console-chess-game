@@ -45,10 +45,7 @@ public class Program {
 					String type = sc.nextLine().toUpperCase();
 					chessMatch.replacePromotedPiece(type);
 				}
-			} catch (ChessException e) {
-				System.out.println(e.getMessage());
-				sc.nextLine();
-			} catch (InputMismatchException e) {	
+			} catch (ChessException | InputMismatchException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}

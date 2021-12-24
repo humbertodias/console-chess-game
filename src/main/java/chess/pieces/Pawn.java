@@ -6,6 +6,8 @@ import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.Color;
 
+import static chess.Color.*;
+
 public class Pawn extends ChessPiece {
 
 	private ChessMatch chessMatch;
@@ -16,12 +18,17 @@ public class Pawn extends ChessPiece {
 	}
 
 	@Override
+	public String toString() {
+		return "P";
+	}
+
+	@Override
 	public boolean[][] possibleMoves() {
-		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		boolean[][] mat = newBoardMatrix();
 		
 		Position p = new Position(0, 0);
 
-		if (getColor() == Color.RED) {
+		if (getColor() == RED) {
 			p.setValues(position.getRow() - 1, position.getColumn());
 			if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
@@ -86,9 +93,5 @@ public class Pawn extends ChessPiece {
 		return mat;
 	}
 	
-	@Override
-	public String toString() {
-		return "P";
-	}
-	
+
 }

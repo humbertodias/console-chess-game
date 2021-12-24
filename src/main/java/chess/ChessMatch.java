@@ -140,10 +140,16 @@ public class ChessMatch {
 	}
 	
 	private ChessPiece newPiece(String type, Color color) {
-		if (type.equals("B")) return new Bishop(board, color);
-		if (type.equals("N")) return new Knight(board, color);
-		if (type.equals("Q")) return new Queen(board, color);
-		return new Rook(board, color);
+		switch (type) {
+			case "B":
+				return new Bishop(board, color);
+			case "N":
+				return new Knight(board, color);
+			case "Q":
+				return new Queen(board, color);
+			default:
+				return new Rook(board, color);
+		}
 	}
 
 	private Piece makeMove(Position source, Position target) {

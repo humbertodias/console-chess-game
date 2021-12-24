@@ -18,7 +18,7 @@ public class Queen extends ChessPiece {
 
 	@Override
 	public boolean[][] possibleMoves() {
-		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		boolean[][] mat = newBoardMatrix();
 
 		Position p = new Position(0, 0);
 

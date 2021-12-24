@@ -32,4 +32,8 @@ public abstract class Piece {
 		return false;
 	}
 
+	public boolean[][] newBoardMatrix(){
+		return new boolean[getBoard().getRows()][getBoard().getColumns()];
+	}
+
 }

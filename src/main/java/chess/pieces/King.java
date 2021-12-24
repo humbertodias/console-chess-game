@@ -27,12 +27,12 @@ public class King extends ChessPiece {
 
 	private boolean testRookCastling(Position position) {
 		ChessPiece p = (ChessPiece) getBoard().piece(position);
-		return p != null && p instanceof Rook && p.getColor() == getColor() && p.getMoveCount() == 0;
+		return p instanceof Rook && p.getColor() == getColor() && p.getMoveCount() == 0;
 	}
 
 	@Override
 	public boolean[][] possibleMoves() {
-		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		boolean[][] mat = newBoardMatrix();
 
 		Position p = new Position(0, 0);
 
